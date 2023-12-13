@@ -2,7 +2,14 @@ import React from "react";
 
 function Buttons({ input, setInput, result, setResult }) {
   function handleClick(value) {
-    setInput(input + value);
+    // setInput(input + value);
+
+    if (result) {
+      setInput(result + value);
+      setResult("");
+    } else {
+      setInput(input + value);
+    }
   }
 
   function handleCalculate() {
